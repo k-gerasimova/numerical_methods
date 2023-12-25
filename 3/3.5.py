@@ -4,7 +4,7 @@ def func(x): #функция y по заданию
     return 1/((2*x+7)*(3*x+4))
 
 
-def pryamougolnic(X, H): #метод прямоугольников
+def rectangle(X, H): #метод прямоугольников
     sum = 0
     for i in range(1,len(X)):
         sum += func((X[i-1] + X[i])/2)
@@ -43,11 +43,11 @@ y1 = np.array([func(x) for x in x1])
 y2 = np.array([func(x) for x in x2])
 
 #вычисления для шагов h1 и h2
-pryam = pryamougolnic(x1, h1)
+pryam = rectangle(x1, h1)
 trapec = trap(y1, h1)
 simpson = Simp(y1, h1)
 
-pryam1 = pryamougolnic(x2, h2)
+pryam1 = rectangle(x2, h2)
 trapec1 = trap(y2, h2)
 simpson1 = Simp(y2, h2)
 
